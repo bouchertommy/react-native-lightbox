@@ -13,7 +13,7 @@ var {
   Dimensions,
   PanResponder,
   TouchableOpacity,
-  StatusBarIOS,
+  StatusBar,
   Modal,
   Platform,
 } = React;
@@ -107,8 +107,8 @@ var LightboxOverlay = React.createClass({
   },
 
   open: function() {
-    if(StatusBarIOS) {
-      StatusBarIOS.setHidden(true, 'fade');
+    if(StatusBar) {
+      StatusBar.setHidden(true, 'fade');
     }
     this.state.pan.setValue(0);
     this.setState({
@@ -127,8 +127,8 @@ var LightboxOverlay = React.createClass({
   },
 
   close: function() {
-    if(StatusBarIOS) {
-      StatusBarIOS.setHidden(false, 'fade');
+    if(StatusBar) {
+      StatusBar.setHidden(false, 'fade');
     }
     this.setState({
       isAnimating: true,
